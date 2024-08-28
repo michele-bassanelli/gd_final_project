@@ -1,0 +1,149 @@
+DEMO   ENGLISH   CONFIG (1.0)
+  ROOTCAT   S.  "changed to ROOT from S"
+  FILES   .
+  LEXENTRIES   (DEMO ENGLISH).
+  TEMPLATES (DEMO ENGLISH).  "added common ParGram templates"
+  RULES   (DEMO ENGLISH) .
+  GOVERNABLERELATIONS    SUBJ OBJ OBJ2 COMP XCOMP OBL OBL-?+.
+  SEMANTICFUNCTIONS    ADJUNCT  TOPIC FOCUS POSS STANDARD.
+  NONDISTRIBUTIVES    NUM PERS COORD-FORM.
+  EPSILON   e.
+  OPTIMALITYORDER NOGOOD  .
+  GENOPTIMALITYORDER GenBadPunct NOGOOD .
+
+----
+
+DEMO   ENGLISH   RULES (1.0)
+
+S --> NP: (^ SUBJ) = !;
+      VP.
+
+NP --> {(D)
+        N: ^ = !
+        |
+        PRON}.
+
+VP -->  CopP.
+
+CopP --> CopV: ^ = !;
+          (PredAP)
+          (PredNP).
+
+PredNP --> PredN: (^ XCOMP) = !.
+
+PredAP --> AP: (^ XCOMP) = !
+               (^ ATYPE) = predic.
+
+AP --> A.
+
+----
+DEMO   ENGLISH   TEMPLATES (1.0)
+
+----
+
+DEMO ENGLISH LEXICON (1.0)
+
+"Determiners"
+
+el D * (^ DEF) = +
+        (^ GEND) = masc
+        (^ NUM) = sg.
+
+la D * (^ DEF) = +
+        (^ GEND) = fem
+        (^ NUM) = sg.
+
+los D * (^ DEF) = +
+        (^ GEND) = masc
+        (^ NUM) = pl.
+
+las D * (^ DEF) = +
+        (^ GEND) = fem
+        (^ NUM) = pl.
+
+"Pronouns"
+
+Ellos     Pron * (^ PRED) = 'Ellos'
+                 (^ PERS) = 3
+                 (^ NUM) = pl
+                 (^ GEND) = masc.
+
+Ellas     Pron * (^ PRED) = 'Ellas'
+                 (^ PERS) = 3
+                 (^ NUM) = pl
+                 (^ GEND) = fem.
+
+"Nouns"
+
+Juan N * (^ PRED) = 'Juan'
+            (^ GEND) = masc
+            (^ NUM) = sg
+            (^ PERS) = 3.
+
+Maria N * (^ PRED) = 'Maria'
+            (^ GEND) = fem
+            (^ NUM) = sg
+            (^ PERS) = 3.
+
+hombres N * (^ PRED) = 'hombre'
+            (^ GEND) = masc
+            (^ NUM) = pl
+            (^ PERS) = 3.
+
+mujeres N * (^ PRED) = 'mujer'
+            (^ GEND) = fem
+            (^ NUM) = pl
+            (^ PERS) = 3.
+
+"Copulas"
+
+son  CopV * (^ PRED) = 'ser<(^ XCOMP)>(^ SUBJ)'
+            (^ SUBJ) = (^ XCOMP SUBJ)
+            (^ TENSE) = pres
+			(^ XCOMP A-ASP) =c descriptive.
+
+estan  CopV * (^ PRED) = 'estar<(^ XCOMP)>(^ SUBJ)'
+            (^ SUBJ) = (^ XCOMP SUBJ)
+			(^ TENSE) = pres
+			(^ XCOMP A-ASP) =c emotional.
+
+"Adjectives"
+
+altas A * (^ PRED) = 'alto<(^ SUBJ)>'
+          (^ SUBJ GEND) = fem
+          (^ SUBJ NUM) = pl
+          (^ ATYPE) = predic.
+		  (^ A-ASP) = descriptive
+
+alto A * (^ PRED) = 'alto<(^ SUBJ)>'
+          (^ SUBJ GEND) = masc
+          (^ SUBJ NUM) = sg
+          (^ ATYPE) = predic
+		  (^ A-ASP) = descriptive. "ser"
+
+altos A * (^ PRED) = 'alto<(^ SUBJ)>'
+          (^ SUBJ GEND) = masc
+          (^ SUBJ NUM) = pl
+          (^ ATYPE) = predic
+		  (^ A-ASP) = descriptive. "ser"
+		 
+enfadadas A * (^ PRED) = 'enfadado<(^ SUBJ)>'
+          (^ SUBJ GEND) = fem
+          (^ SUBJ NUM) = pl
+          (^ ATYPE) = predic
+		  (^ A-ASP) = emotional. 
+		  
+enfadados A * (^ PRED) = 'enfadado<(^ SUBJ)>'
+          (^ SUBJ GEND) = masc
+          (^ SUBJ NUM) = pl
+          (^ ATYPE) = predic
+		  (^ A-ASP) = emotional.
+		  
+
+"Attributes"
+
+presidentes PredN * (^ PRED) = 'presidente<(^ SUBJ)>'
+				   (^ SUBJ GEND) = masc
+				   (^ SUBJ NUM) = pl.
+
+----
