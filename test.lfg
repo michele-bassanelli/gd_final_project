@@ -1,28 +1,28 @@
 #testsuite
 # Correct Sentences  
 
-Las mujeres son altas.
+Las mujeres son altas
 
-Las mujeres estan enfadadas.
+Las mujeres estan enfadadas
 
-Juan es presidente.
+Juan es presidente
 
-Ellos estan enfadados.
+Ellos estan enfadados
 
 # Incorrect Sentences
 # Fails due to gender agreement
 
-Las mujeres son alto. 
+Las mujeres son alto
 
-Las mujeres estan enfadados. 
+Las mujeres estan enfadados
 
 # Fails due to XCOMP agreement
 
-Juan está presidente. 
+Juan esta presidente 
 
 # Fails due to aspect constraint
 
-Ellos son enfadados. 
+Ellos son enfadados 
 
-Ellas están altas.
+Ellas estan altas
 
