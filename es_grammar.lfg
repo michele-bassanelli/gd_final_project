@@ -21,7 +21,7 @@ S --> NP: (^ SUBJ) = !;
 NP --> {(D)
         N: ^ = !
         |
-        PRON}.
+        Pron}.
 
 VP -->  CopP.
 
@@ -102,7 +102,17 @@ son  CopV * (^ PRED) = 'ser<(^ XCOMP)>(^ SUBJ)'
             (^ TENSE) = pres
 			(^ XCOMP A-ASP) =c descriptive.
 
+es  CopV * (^ PRED) = 'ser<(^ XCOMP)>(^ SUBJ)'
+            (^ SUBJ) = (^ XCOMP SUBJ)
+            (^ TENSE) = pres
+			(^ XCOMP A-ASP) =c descriptive.
+
 estan  CopV * (^ PRED) = 'estar<(^ XCOMP)>(^ SUBJ)'
+            (^ SUBJ) = (^ XCOMP SUBJ)
+			(^ TENSE) = pres
+			(^ XCOMP A-ASP) =c emotional.
+
+esta  CopV * (^ PRED) = 'estar<(^ XCOMP)>(^ SUBJ)'
             (^ SUBJ) = (^ XCOMP SUBJ)
 			(^ TENSE) = pres
 			(^ XCOMP A-ASP) =c emotional.
@@ -112,8 +122,8 @@ estan  CopV * (^ PRED) = 'estar<(^ XCOMP)>(^ SUBJ)'
 altas A * (^ PRED) = 'alto<(^ SUBJ)>'
           (^ SUBJ GEND) = fem
           (^ SUBJ NUM) = pl
-          (^ ATYPE) = predic.
-		  (^ A-ASP) = descriptive
+          (^ ATYPE) = predic
+		  (^ A-ASP) = descriptive.
 
 alto A * (^ PRED) = 'alto<(^ SUBJ)>'
           (^ SUBJ GEND) = masc
@@ -126,24 +136,30 @@ altos A * (^ PRED) = 'alto<(^ SUBJ)>'
           (^ SUBJ NUM) = pl
           (^ ATYPE) = predic
 		  (^ A-ASP) = descriptive. "ser"
-		 
+
 enfadadas A * (^ PRED) = 'enfadado<(^ SUBJ)>'
           (^ SUBJ GEND) = fem
           (^ SUBJ NUM) = pl
           (^ ATYPE) = predic
-		  (^ A-ASP) = emotional. 
-		  
+		  (^ A-ASP) = emotional.
+
 enfadados A * (^ PRED) = 'enfadado<(^ SUBJ)>'
           (^ SUBJ GEND) = masc
           (^ SUBJ NUM) = pl
           (^ ATYPE) = predic
 		  (^ A-ASP) = emotional.
-		  
+
 
 "Attributes"
 
 presidentes PredN * (^ PRED) = 'presidente<(^ SUBJ)>'
+				    (^ SUBJ GEND) = masc
+				    (^ SUBJ NUM) = pl
+					(^ A-ASP) = descriptive.
+
+presidente PredN * (^ PRED) = 'presidente<(^ SUBJ)>'
 				   (^ SUBJ GEND) = masc
-				   (^ SUBJ NUM) = pl.
+				   (^ SUBJ NUM) = sg
+				   (^ A-ASP) = descriptive.
 
 ----
